@@ -7,6 +7,8 @@ import cors from 'cors';
 
 import busRoutes from './routes/bus_r.js'
 import bookRoutes from './routes/book_r.js'
+import user_account_r from './routes/user_account_r.js'
+import Token_r from './routes/Token_r.js'
 
 import http from 'http';
 import { Server } from "socket.io";
@@ -29,33 +31,14 @@ app.use(cors());
 
 app.use('/bus', busRoutes);
 app.use('/book', bookRoutes);
+app.use('/users', user_account_r);
+app.use('/token', Token_r);
 
 
-const URL = 'mongodb+srv://Mishara:WwFLJsYgCNoKO8Ot@onlineticketing.8bzhwcf.mongodb.net/Ticketing?retryWrites=true&w=majority';
+
+const URL = 'mongodb+srv://Ishan:gNdyH7YrkraCKbpF@onlineticketing.8bzhwcf.mongodb.net/Ticketing?retryWrites=true&w=majority';
 
 const PORT = process.env.PORT || 5000;
-
-
-/*io.on('connection', async (socket) => {
-
-
-    socket.on('sendMessage', async messageObj => {
-
-        const newChats = new Chats(messageObj);
-        await newChats.save();
-
-        const ret = await Chats.find({studentGroup: messageObj.studentGroup})
-            .populate('user', '_id user_Fname user_Lname user_role user_avatar')
-            .select("message user createdAt");
-
-
-        io.emit(messageObj.studentGroup, ret);
-    })
-
-    socket.on('chat message', msg => {
-        io.emit('chat message', msg);
-    });
-});*/
 
 
 
