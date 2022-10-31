@@ -4,11 +4,14 @@ import mongoose from "mongoose";
 import cors from 'cors';
 
 
-
 import busRoutes from './routes/bus_r.js'
 import bookRoutes from './routes/book_r.js'
 import user_account_r from './routes/user_account_r.js'
 import Token_r from './routes/Token_r.js'
+import TimetableRouter from './routes/TimetableRouter.js'
+import InspectorRouter from './routes/InspectorRouter.js'
+import RoutesRouter from './routes/RoutesRouter.js'
+import AllocationRouter from './routes/AllocationRouter.js'
 
 import http from 'http';
 import { Server } from "socket.io";
@@ -28,11 +31,14 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
 
 
-
 app.use('/bus', busRoutes);
 app.use('/book', bookRoutes);
 app.use('/users', user_account_r);
 app.use('/token', Token_r);
+app.use('/timetables', TimetableRouter);
+app.use('/inspector', InspectorRouter);
+app.use('/routes', RoutesRouter);
+app.use('/allocation', AllocationRouter);
 
 
 
