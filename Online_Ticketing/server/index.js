@@ -12,6 +12,9 @@ import TimetableRouter from './routes/TimetableRouter.js'
 import InspectorRouter from './routes/InspectorRouter.js'
 import RoutesRouter from './routes/RoutesRouter.js'
 import AllocationRouter from './routes/AllocationRouter.js'
+import paymentRoutes from './routes/payment_r.js'
+import topupRoutes from './routes/topup_r.js'
+import transportmanRoutes from './routes/transportman_r.js'
 
 import http from 'http';
 import { Server } from "socket.io";
@@ -39,7 +42,9 @@ app.use('/timetables', TimetableRouter);
 app.use('/inspector', InspectorRouter);
 app.use('/routes', RoutesRouter);
 app.use('/allocation', AllocationRouter);
-
+app.use('/payments', paymentRoutes);
+app.use('/topups', topupRoutes);
+app.use('/transportmans', transportmanRoutes);
 
 
 const URL = 'mongodb+srv://Ishan:gNdyH7YrkraCKbpF@onlineticketing.8bzhwcf.mongodb.net/Ticketing?retryWrites=true&w=majority';
