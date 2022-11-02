@@ -32,7 +32,7 @@ const user_AccountSchema = mongoose.Schema({
     // },
     user_phoneNo: {
         type: String,
-        required: true,
+        required: false,
         unique: false
     }
 
