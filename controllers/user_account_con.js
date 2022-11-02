@@ -52,6 +52,7 @@ export const getuser = async (req, res) => {
 }
 
 export const adduser = async (req, res) => {
+    
     const {user_name, user_type, user_address,user_Email,user_password,user_passportNo,user_phoneNo} = req.body;
 
     const newusers = new userAcc(req.body)

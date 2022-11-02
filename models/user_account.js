@@ -4,11 +4,11 @@ const user_AccountSchema = mongoose.Schema({
    
     user_name: {
         type: String,
-        required: true
+        required: false
     },
     user_type: {
         type: String,
-        required: true
+        required: false
     },
     user_address: {
         type: String,
@@ -33,7 +33,7 @@ const user_AccountSchema = mongoose.Schema({
     user_phoneNo: {
         type: String,
         required: true,
-        unique: true
+        unique: false
     }
 
 
