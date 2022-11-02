@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from 'cors';
@@ -13,31 +13,26 @@ import { Server } from "socket.io";
 
 const app = express()
     , httpServer = http.createServer(app)
-    , io = new Server(httpServer,{
-        cors:{
+    , io = new Server(httpServer, {
+        cors: {
             origin: "*",
             methods: "*"
         }
-});
+    });
 
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
 
-
-
 app.use('/bus', busRoutes);
 app.use('/book', bookRoutes);
 app.use('/users', user_account_r);
 app.use('/token', Token_r);
 
-
-
 const URL = 'mongodb+srv://Ishan:gNdyH7YrkraCKbpF@onlineticketing.8bzhwcf.mongodb.net/Ticketing?retryWrites=true&w=majority';
 
 const PORT = process.env.PORT || 5000;
-
 
 mongoose.connect(URL).then(() => {
     console.log(`Server is running on port`);
