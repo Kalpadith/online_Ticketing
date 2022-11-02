@@ -27,16 +27,10 @@ const user_AccountSchema = mongoose.Schema({
         type: String,
         required: false
     },
-    // user_avatar: {
-    //     type: String,
-    // },
     user_phoneNo: {
         type: String,
-        required: false,
-        unique: false
+        required: false
     }
-
-
 })
 
 const userAcc = mongoose.model('users', user_AccountSchema);
