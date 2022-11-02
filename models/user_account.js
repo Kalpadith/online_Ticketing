@@ -12,20 +12,20 @@ const user_AccountSchema = mongoose.Schema({
     },
     user_address: {
         type: String,
-        required: true
+        required: false
     },
     user_Email: {
         type: String,
-        required: true,
+        required: false,
         unique: true
     },
     user_password: {
         type: String,
-        required: true
+        required: false
     },
     user_passportNo: {
         type: String,
-        required: true
+        required: false
     },
     // user_avatar: {
     //     type: String,
