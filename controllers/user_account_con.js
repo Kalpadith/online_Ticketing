@@ -41,13 +41,21 @@ export const getusers = async (req, res) => {
 
 export const getuser = async (req, res) => {
     const {id} = req.params;
-
     try {
         const user = await userAcc.findById(id);
-
         res.status(200).json(user);
     } catch (error) {
         res.status(404).json({message: error.message});
+    }
+}
+
+export const searchEmail = async(req, res) => {
+    const {user_Email} = req.params;
+    try{
+        const searchingEmail = await userAcc.find({"user_Email":user_Email});
+        res.status(200).json(searchingEmail);
+    }catch(error){
+        res.status(404).json({message: error.message}); 
     }
 }
 
