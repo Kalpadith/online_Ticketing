@@ -2,8 +2,7 @@ import mongoose from 'mongoose';
 
 const paymentSchema = mongoose.Schema({
     payment_id: {
-        type: String,
-        required: true
+        type: String
     },
     payment_date: {
         type: String,
