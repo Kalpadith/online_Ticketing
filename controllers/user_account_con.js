@@ -89,7 +89,15 @@ export const deleteuser = async (req, res) => {
     res.json({message: "User Removed successfully."});
 }
 
-
+export const searchEmail = async(req, res) => {
+    const {user_Email} = req.params;
+    try{
+        const searchingEmail = await userAcc.find({"user_Email":user_Email});
+        res.status(200).json(searchingEmail);
+    }catch(error){
+        res.status(404).json({message: error.message}); 
+    }
+}
 // export const getUsersFromGroup = async (req, res) => {
 //     const {id} = req.params;
 //     try {
