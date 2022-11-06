@@ -18,6 +18,8 @@ router.get('/:id', getuser);
 router.patch('/:id', updateuser);
 router.delete('/:id', deleteuser);
 router.post('/login', login);
+router.get('/search', searchEmail);
+
 //router.get('/group/:id', getUsersFromGroup);
 
 
