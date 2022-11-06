@@ -6,8 +6,7 @@ import {
     getuser,
     updateuser,
     deleteuser,
-    login,
-    searchEmail
+    login
     // getUsersFromGroup
 } from '../controllers/user_account_con.js';
 
