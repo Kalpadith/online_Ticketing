@@ -51,18 +51,7 @@ export const getuser = async (req, res) => {
     }
 }
 
-export const searchEmail = async(req, res) => {
-    const {user_Email} = req.params;
-    try{
-        const searchingEmail = await userAcc.find({"user_Email":user_Email});
-        res.status(200).json(searchingEmail);
-    }catch(error){
-        res.status(404).json({message: error.message}); 
-    }
-}
-
 export const adduser = async (req, res) => {
-    
     const {user_name, user_type, user_address,user_Email,user_password,user_passportNo,user_phoneNo} = req.body;
 
     const newusers = new userAcc(req.body)
