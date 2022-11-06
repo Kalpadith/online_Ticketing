@@ -6,8 +6,7 @@ import {
     getuser,
     updateuser,
     deleteuser,
-    login,
-    searchEmail
+    login
     // getUsersFromGroup
 } from '../controllers/user_account_con.js';
 
@@ -19,7 +18,6 @@ router.get('/:id', getuser);
 router.patch('/:id', updateuser);
 router.delete('/:id', deleteuser);
 router.post('/login', login);
-router.get('/search/:user_Email', searchEmail);
 //router.get('/group/:id', getUsersFromGroup);
 
 
